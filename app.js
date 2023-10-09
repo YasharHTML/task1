@@ -1,5 +1,7 @@
 import http from "http";
 
+const PORT = process.env.npm_config_port ?? 3000;
+
 const session = { message: "Request handled successfully", requestCount: 0 };
 
 const server = http.createServer((req, res) => {
@@ -9,6 +11,6 @@ const server = http.createServer((req, res) => {
     session.requestCount++;
 });
 
-server.listen(3000, () => {
-    console.log("Listening: " + 3000);
+server.listen(PORT, () => {
+    console.log("Listening: " + PORT);
 });
